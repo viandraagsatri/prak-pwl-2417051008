@@ -1,24 +1,40 @@
 @extends('layouts.app')
 
 @section('content')
-    <div>
-        <h1>Buat Pengguna Baru</h1>
-        <form action="{{ route('user.store') }}" method="POST">
-            @csrf
-            <label for="nama">Nama</label><br>
-            <input type="text" id="nama" name="nama"><br><br>
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-body p-4">
+                <h1 class="h4 mb-4">Buat Pengguna Baru</h1>
 
-            <label for="npm">NPM</label><br>
-            <input type="text" id="npm" name="npm"><br><br>
-            
-            <label for="kelas">Kelas</label><br>
-            <select id="kelas_id" name="kelas_id">
-                @foreach ($kelas as $kelasItem)
-                    <option value="{{ $kelasItem->id }}">{{ $kelasItem->nama_kelas }}</option>
-                @endforeach
-            </select><br><br>
+                <form action="{{ route('user.store') }}" method="POST">
+                    @csrf
 
-            <button type="submit">Simpan</button>
-        </form>
+                    <div class="mb-3">
+                        <label for="nama" class="form-label">Nama</label>
+                        <input type="text" class="form-control" id="nama" name="nama" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="npm" class="form-label">NPM</label>
+                        <input type="text" class="form-control" id="npm" name="npm" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="kelas_id" class="form-label">Kelas</label>
+                        <select name="kelas_id" id="kelas_id" class="form-select">
+                            @foreach ($kelas as $kelasItem)
+                                <option value="{{ $kelasItem->id }}">{{ $kelasItem->nama_kelas }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-brand w-100">
+                        <i class="bi bi-save"></i> Submit
+                    </button>
+                </form>
+            </div>
+        </div>
     </div>
+</div>
 @endsection
