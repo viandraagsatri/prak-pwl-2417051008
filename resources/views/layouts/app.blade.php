@@ -20,7 +20,13 @@
         .btn-brand { background-color: #6C5CE7; border-color: #6C5CE7; color: #fff; }
         .btn-brand:hover { background-color: #5E60CE; border-color: #5E60CE; color: #fff; }
 
-        .badge-kelas { background-color:  #EDE9FE; color: #5B21B6; }
+        .badge-kelas { background-color: #D47A9D; color: #fff; }
+
+        .btn-edit { border: 1px solid #6C5CE7; color: #6C5CE7; background: #fff; }
+        .btn-edit:hover { background: #6C5CE7; color: #fff; }
+
+        .btn-hapus { border: 1px solid #D47A9D; color: #D47A9D; background: #fff; }
+        .btn-hapus:hover { background: #D47A9D; color: #fff; }
     </style>
 </head>
 <body class="bg-light d-flex flex-column min-vh-100">
